@@ -1,9 +1,11 @@
-{
-	name: "myExtension",
-	author: "myExtensionAuthor",
-	description: "This is myExtension!",
-	version: "1.1.1",
-	website: "https://gist.github.com/",
+import * as package from './package.json'
+
+export default {
+	name: package.name,
+	version: package.version,
+	description: package.description,
+	author: package.author,
+	website: package.website,
 	isEnabled: false,
 	dependencies: ["myImportantExtension"],
 	conflicts: ["veryBadExtension"],

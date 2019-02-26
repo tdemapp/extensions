@@ -1,0 +1,22 @@
+{
+  "name": "Extension-Name",
+  "version": "1.1.1",
+  "description": "Extesion Description",
+  "author": "Extension Author",
+  "homepage": "https://github.com/tdemapp/api#readme",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch"
+  },
+  "keywords": [
+    "twitter",
+    "tweetdeck",
+    "extensions"
+  ],
+  "devDependencies": {
+    "typescript": "3.3.3333"
+  },
+  "dependencies": {}
+}
