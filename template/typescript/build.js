@@ -5,13 +5,25 @@ const package = require('./package.json');
 
 const config = {
   entry: {
-    create: './src/create.js',
-    destroy: './src/destroy.js'
+    create: './src/create.ts',
+    destroy: './src/destroy.ts'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      }
+    ]
+  },
+  resolve: {
+    extensions: ['.ts', '.js']
   },
   output: {
     filename: '[name].bundle.js',
     publicPath: path.resolve(__dirname, './dist/'),
-  }
+  },
 };
 
 console.log('🏗  Bundling sources...');

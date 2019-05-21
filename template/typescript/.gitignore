@@ -13,6 +13,3 @@ node_modules/
 
 # Build directory
 dist/
-
-# Generated source file
-index.js
