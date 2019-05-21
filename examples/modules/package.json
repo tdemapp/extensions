@@ -1,0 +1,21 @@
+{
+  "name": "Modules",
+  "version": "1.1.1",
+  "description": "Example Extension: Node Modules",
+  "author": "N U R O ™ <me@nuro.sh>",
+  "homepage": "https://github.com/tdemapp/extensions/tree/master/examples/modules/",
+  "main": "index.js",
+  "scripts": {
+    "export": "node build.js"
+  },
+  "keywords": [
+    "tdem",
+    "twitter",
+    "tweetdeck",
+    "extensions"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^4.32.0"
+  }
+}
