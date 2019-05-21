@@ -1,14 +1,7 @@
-const create = () => {
-	var node = document.createElement('style');
-	node.innerHTML = 'body { color: red }';
-	document.body.appendChild(node);
-};
-
-const destroy = () => {
-	console.log("myExtension destroyed!");
-};
+const create = require('./src/create');
+const destroy = require('./src/create');
 
 module.exports = {
-	create,
-	destroy
+  create,
+  destroy,
 }

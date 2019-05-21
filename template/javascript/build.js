@@ -1,8 +1,23 @@
-var fs = require('fs');
-var package = require('./package.json');
-var extension = require('./index.js');
+const fs = require('fs');
+const path = require('path')
+const webpack = require('webpack');
+const package = require('./package.json');
 
-function generateExtension () {
+const config = {
+  entry: {
+    create: './src/create.js',
+    destroy: './src/destroy.js'
+  },
+  output: {
+    filename: '[name].bundle.js',
+    publicPath: path.resolve(__dirname, './dist/'),
+  }
+};
+
+console.log('🏗  Bundling sources...');
+webpack(config, (err) => {
+  if (err) throw new Error(err);
+
   // Generate extension meta data based on package.json data
   const generatedExtension = {
     name: package.name,
@@ -18,23 +33,19 @@ function generateExtension () {
     destroy: null,
   };
 
-  // Convert create/destroy functions to string
-  generatedExtension.create = extension.create.toString();
-  generatedExtension.destroy = extension.destroy.toString();
+  // Set extension create function to stringified JS bundle
+  generatedExtension.create = fs.readFileSync('./dist/create.bundle.js', (err) => {
+    if(err) throw new Error(err)
+  }).toString();
 
-  // Create dist directory if it doesn't exist already
-  if (!fs.existsSync('dist/')) {
-    fs.mkdirSync('./dist/');
-  }
-
+  // Set extension destroy function to stringified JS bundle
+  generatedExtension.destroy = fs.readFileSync('./dist/destroy.bundle.js', (err) => {
+    if(err) throw new Error(err)
+  }).toString();
+  
   // Generate extension JSON file
-  fs.writeFile(`dist/${package.name}-${package.version}.json`, JSON.stringify(generatedExtension), (err) => {
-    if (err) {
-      throw new Error(err);
-    } else {
-      console.log('🎉 Successfully generated extension!');
-    }
+  fs.writeFile(`./dist/${package.name}-${package.version}.json`, JSON.stringify(generatedExtension, null, '\t'), (err) => {
+    if (err) throw new Error(err);
+    console.log('🎉  Successfully generated extension!');
   });
-}
-
-generateExtension();
+});

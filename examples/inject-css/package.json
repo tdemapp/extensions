@@ -15,5 +15,7 @@
     "extensions"
   ],
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "webpack": "^4.32.0"
+  }
 }

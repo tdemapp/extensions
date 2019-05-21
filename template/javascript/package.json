@@ -1,5 +1,5 @@
 {
-  "name": "Extension-Name-JS",
+  "name": "Extension-JS",
   "version": "1.1.1",
   "description": "Extesion Description",
   "author": "Extension Author",
@@ -15,5 +15,7 @@
     "extensions"
   ],
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "webpack": "^4.32.0"
+  }
 }
