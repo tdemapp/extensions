@@ -13,4 +13,4 @@
 
 ## License:
 
-MIT © [Ben Dixon](https://github.com/tdemapp/extensions/blob/master/LICENSE)
+MIT © [Ben Dixon](https://github.com/tdemapp/template/blob/master/LICENSE)
