@@ -3,7 +3,7 @@
   "version": "1.1.1",
   "description": "Extesion Description",
   "author": "Extension Author",
-  "homepage": "https://github.com/tdemapp/api#readme",
+  "homepage": "https://github.com/tdemapp/interface#readme",
   "main": "index.js",
   "scripts": {
     "export": "node build.js"
